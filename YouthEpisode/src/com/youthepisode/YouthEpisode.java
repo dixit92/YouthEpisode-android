@@ -3,8 +3,6 @@ package com.youthepisode;
 import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -57,11 +55,12 @@ public class YouthEpisode extends ActionBarActivity {
     
     private class DownloadWebPage extends AsyncTask<String, Void, String> {
     	protected void onPostExecute(String result) {
-
-    		status2.setText(result);
+    		
+    		status2.setText("Page Retrieved");
             initial.setVisibility(View.GONE);
-            startActivity (new Intent (YouthEpisode.this, Home.class));
-         
+            Intent home = new Intent (YouthEpisode.this, Home.class);
+            home.putExtra("com.YouthEpisode.Home.result", result);
+            startActivity (home);
     	}
 
 		@Override
@@ -78,15 +77,13 @@ public class YouthEpisode extends ActionBarActivity {
 		        
 		       //Jsoup parsing
 		       
-		        Document soupDoc = Jsoup.connect(myurl).timeout(10000).get();
-		        Element content = soupDoc.getElementById("content");
-		        String result = content.nodeName();
-		        return result;
+		        Document soupDoc = Jsoup.connect(myurl).maxBodySize(0).timeout(5000).get();
+		        return soupDoc.html();
 		        
 		    // Makes sure that the InputStream is closed after the app is
 		    // finished using it.
 		    } finally {
-		        
+		        	
 		        } 
 		    }
 		}

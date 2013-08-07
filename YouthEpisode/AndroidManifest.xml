@@ -23,6 +23,7 @@
             android:theme="@style/Theme.AppCompat.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -30,6 +31,15 @@
             android:name="com.youthepisode.Home"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name="com.youthepisode.Follow"
+            android:label="@string/title_activity_follow"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:parentActivityName="com.youthepisode.Home" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.youthepisode.Home" />
         </activity>
     </application>
 

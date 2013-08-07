@@ -8,13 +8,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Home" >
 
-    <TextView
-        android:id="@+id/tvHome"
+    <EditText
+        android:id="@+id/etHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:text="@string/home_hello" />
+        android:ems="10"
+        android:inputType="textMultiLine" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

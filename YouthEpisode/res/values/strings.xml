@@ -8,5 +8,12 @@
     <string name="downloading0"></string>
     <string name="title_activity_home">Home</string>
     <string name="home_hello">Home Launched!</string>
-
+    <string name="follow_us">Follow Us!</string>
+    <string name="title_activity_follow">Follow Us!</string>
+    <string name="facebook">Facebook</string>
+	<string name="twitter">Twitter</string>
+	<string name="linkedin">LinkedIn</string>
+	<string name="pinterest">Pinterest</string>
+	<string name="youtube">Youtube</string>
+	<string name="tumblr">Tumblr</string>
 </resources>

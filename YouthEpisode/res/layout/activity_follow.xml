@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/bFB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="48dp"
+        android:text="@string/facebook"
+        android:onClick="sendMessageFB" />
+
+    <Button
+        android:id="@+id/bTW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="48dp"
+        android:text="@string/twitter"
+        android:onClick="sendMessageTW" />
+
+    <Button
+        android:id="@+id/bLN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="48dp"
+        android:text="@string/linkedin"
+        android:onClick="sendMessageLN" />
+
+    <Button
+        android:id="@+id/bYT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="48dp"
+        android:text="@string/youtube"
+        android:onClick="sendMessageYT" />
+
+    <Button
+        android:id="@+id/bTL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="48dp"
+        android:text="@string/tumblr"
+        android:onClick="sendMessageTL" />
+
+    <Button
+        android:id="@+id/bPT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="48dp"
+        android:text="@string/pinterest"
+        android:onClick="sendMessagePTs" />
+
+</LinearLayout>
