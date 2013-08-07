@@ -55,11 +55,12 @@ public class YouthEpisode extends ActionBarActivity {
     
     private class DownloadWebPage extends AsyncTask<String, Void, String> {
     	protected void onPostExecute(String result) {
-    		
+    		int pgno=1;
     		status2.setText("Page Retrieved");
             initial.setVisibility(View.GONE);
             Intent home = new Intent (YouthEpisode.this, Home.class);
             home.putExtra("com.YouthEpisode.Home.result", result);
+            home.putExtra("com.YouthEpisode.Home.pgno", pgno);
             startActivity (home);
     	}
 
