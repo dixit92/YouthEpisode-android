@@ -10,10 +10,12 @@ import org.jsoup.nodes.Element;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -77,6 +79,9 @@ public class Home extends ActionBarActivity {
 		Bundle	loadedPage = getIntent().getExtras();
 		String page = loadedPage.getString("com.YouthEpisode.Home.result");
 		pgno = loadedPage.getInt("com.YouthEpisode.Home.pgno");
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setTitle("Home - " +pgno);
+		
 		
 		lv = (ListView) findViewById (R.id.list);
 		prev = (Button) findViewById (R.id.bBack);
@@ -114,8 +119,19 @@ public class Home extends ActionBarActivity {
 		 ArrayAdapter<String> arrayAdapter =      
 		 new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, titles);
 	     lv.setAdapter(arrayAdapter); 
-	
+	     
+	     //Select action 
+	     lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	    	 public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
+	    		 Intent i = new Intent (Home.this, Article.class);
+	    		 i.putExtra("com.YouthEpisode.Article.URL", url.get(position));
+	    		 startActivity (i);
+	    	 }
+		});
 	}
+	
+	//Adapter Click Listener
+	
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

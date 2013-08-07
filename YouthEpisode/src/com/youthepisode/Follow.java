@@ -17,7 +17,7 @@ public class Follow extends ActionBarActivity {
 		setContentView(R.layout.activity_follow);
 		
 		ActionBar actionBar = getSupportActionBar();
-	    actionBar.setDisplayHomeAsUpEnabled(true);
+	    actionBar.setDisplayHomeAsUpEnabled(false);
 		
 		
 	}
